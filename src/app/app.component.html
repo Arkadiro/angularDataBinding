@@ -2,6 +2,7 @@
   <app-cockpit 
     (cockpitServerCreated)="onAddServer($event)" (cockpitBlueprintAdded)="onAddBlueprint($event)">
   </app-cockpit>
+  <button class="btn btn-danger" (click)="deleteItem()">Delete item</button>
   <hr>
   <div class="row">
     <div class="col-xs-12">

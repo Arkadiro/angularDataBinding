@@ -33,4 +33,7 @@ export class AppComponent {
     const id = Math.floor(Math.random()*10)+1+'abc'
     return id;
   }
+  deleteItem(){
+    this.state.splice(0,1);
+  }
 }

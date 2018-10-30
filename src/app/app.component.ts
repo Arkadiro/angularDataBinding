@@ -6,23 +6,31 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  serverElements = [];
+  state = [];
   newServerName = '';
   newServerContent = '';
+  
 
-  onAddServer() {
-    this.serverElements.push({
+  onAddServer(data) {
+    this.state.push({
       type: 'server',
-      name: this.newServerName,
-      content: this.newServerContent
+      id: this.getId(),
+      name: data.serverName,
+      content: data.serverContent
     });
   }
 
-  onAddBlueprint() {
-    this.serverElements.push({
+  onAddBlueprint(data) {
+    this.state.push({
       type: 'blueprint',
-      name: this.newServerName,
-      content: this.newServerContent
+      id: this.getId(),
+      name: data.serverName,
+      content: data.serverContent
     });
+  }
+
+  getId(){
+    const id = Math.floor(Math.random()*10)+1+'abc'
+    return id;
   }
 }
